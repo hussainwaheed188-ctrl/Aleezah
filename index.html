@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Aleezah ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --pink: #ff4f81;
+    --light-pink: #ffd6e3;
+    --dark-pink: #9d174d;
+    --cream: #fff8fa;
+    --text: #4a2433;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Animated background */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(255, 120, 160, .15), transparent 25%),
+        radial-gradient(circle at 90% 80%, rgba(255, 170, 190, .2), transparent 30%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Falling petals */
+.petal {
+    position: fixed;
+    top: -50px;
+    font-size: 24px;
+    animation: fall linear infinite;
+    pointer-events: none;
+    z-index: 5;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 248, 250, .75);
+    backdrop-filter: blur(15px);
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Great Vibes', cursive;
+    color: var(--pink);
+    font-size: 32px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark-pink);
+    margin-left: 25px;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--pink);
+}
+
+/* Hero */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px 60px;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 850px;
+    animation: fadeUp 1.5s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.heart {
+    font-size: 70px;
+    animation: heartbeat 1.5s infinite;
+    display: inline-block;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(60px, 10vw, 125px);
+    color: var(--pink);
+    margin: 10px 0;
+}
+
+.hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 4vw, 38px);
+    font-weight: 500;
+    color: var(--dark-pink);
+}
+
+.hero p {
+    margin: 25px auto;
+    max-width: 650px;
+    line-height: 1.9;
+    font-size: 17px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 32px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ff4f81, #d91e63);
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    box-shadow: 0 10px 25px rgba(217, 30, 99, .25);
+    transition: .4s;
+}
+
+.btn:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(217, 30, 99, .35);
+}
+
+/* Sections */
+section {
+    padding: 100px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+    font-size: 65px;
+    color: var(--pink);
+    margin-bottom: 40px;
+}
+
+/* Letter */
+.letter-container {
+    max-width: 850px;
+    margin: auto;
+    background: rgba(255,255,255,.8);
+    padding: 50px;
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(157, 23, 77, .12);
+    border: 1px solid rgba(255, 79, 129, .15);
+    transition: .5s;
+}
+
+.letter-container:hover {
+    transform: translateY(-10px);
+}
+
+.letter-container p {
+    line-height: 2;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.signature {
+    font-family: 'Great Vibes', cursive;
+    font-size: 42px;
+    color: var(--pink);
+    text-align: right;
+}
+
+/* Promise cards */
+.promises {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    padding: 35px 25px;
+    text-align: center;
+    border-radius: 25px;
+    box-shadow: 0 12px 35px rgba(157, 23, 77, .1);
+    transition: .5s;
+}
+
+.card:hover {
+    transform: translateY(-12px) rotate(1deg);
+}
+
+.card .icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: var(--dark-pink);
+    margin-bottom: 12px;
+}
+
+/* Timeline */
+.timeline {
+    max-width: 750px;
+    margin: auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(var(--pink), var(--light-pink));
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    width: 50%;
+    padding: 20px 40px;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-item::after {
+    content: "🌹";
+    position: absolute;
+    top: 20px;
+    background: white;
+    border-radius: 50%;
+    padding: 8px;
+}
+
+.timeline-item:nth-child(odd)::after {
+    right: -23px;
+}
+
+.timeline-item:nth-child(even)::after {
+    left: -23px;
+}
+
+.timeline-item h3 {
+    color: var(--pink);
+    margin-bottom: 10px;
+}
+
+/* Marriage section */
+.marriage {
+    text-align: center;
+    background: linear-gradient(135deg, #fff0f5, #ffe0ea);
+    border-radius: 40px;
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 30px;
+}
+
+.marriage h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 75px;
+    color: var(--pink);
+}
+
+.marriage p {
+    max-width: 700px;
+    margin: 20px auto;
+    line-height: 2;
+    font-size: 18px;
+}
+
+/* Forgiveness */
+.forgiveness {
+    text-align: center;
+    padding-bottom: 130px;
+}
+
+.forgiveness p {
+    max-width: 650px;
+    margin: auto;
+    line-height: 2;
+    font-size: 17px;
+}
+
+#response {
+    margin-top: 30px;
+    font-family: 'Great Vibes', cursive;
+    color: var(--pink);
+    font-size: 42px;
+    min-height: 60px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #4a2433;
+    color: white;
+}
+
+footer span {
+    color: #ff8eae;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    nav {
+        padding: 15px 5%;
+    }
+
+    nav a {
+        margin-left: 10px;
+        font-size: 11px;
+    }
+
+    .letter-container {
+        padding: 30px 22px;
+    }
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+        width: 100%;
+        left: 0;
+        text-align: left;
+        padding-left: 45px;
+    }
+
+    .timeline-item:nth-child(odd)::after,
+    .timeline-item:nth-child(even)::after {
+        left: -3px;
+        right: auto;
+    }
+
+    .marriage h2 {
+        font-size: 55px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Falling rose petals -->
+<div class="petal" style="left:5%; animation-duration:10s;">🌹</div>
+<div class="petal" style="left:15%; animation-duration:13s; animation-delay:2s;">🌸</div>
+<div class="petal" style="left:28%; animation-duration:9s; animation-delay:1s;">🌹</div>
+<div class="petal" style="left:42%; animation-duration:15s; animation-delay:3s;">🌸</div>
+<div class="petal" style="left:58%; animation-duration:11s;">🌹</div>
+<div class="petal" style="left:72%; animation-duration:14s; animation-delay:2s;">🌸</div>
+<div class="petal" style="left:88%; animation-duration:10s; animation-delay:4s;">🌹</div>
+
+<nav>
+    <div class="logo">For Aleezah ❤️</div>
+    <div>
+        <a href="#letter">My Letter</a>
+        <a href="#promises">Promises</a>
+        <a href="#future">Our Future</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+
+        <div class="heart">❤️</div>
+
+        <h1>Aleezah</h1>
+
+        <h2>There is something my heart needs to tell you...</h2>
+
+        <p>
+            I know I hurt you. I know seeing my old dating profile made you question
+            me, my feelings, and everything between us.
+            But before you read anything else, I want you to know one thing:
+            <strong>I love you.</strong>
+        </p>
+
+        <a href="#letter" class="btn">Read My Heart 💌</a>
+
+    </div>
+</section>
+
+<!-- LETTER -->
+<section id="letter">
+
+    <h2 class="section-title">My Apology To You</h2>
+
+    <div class="letter-container">
+
+        <p>My dearest Aleezah,</p>
+
+        <p>
+            I am not going to pretend that you should simply forget what happened.
+            I understand why you are angry. I understand why you feel hurt.
+            I understand why finding my old dating profile made you question me.
+        </p>
+
+        <p>
+            If I were in your place, I might have questions too.
+            And for that, I am truly sorry.
+        </p>
+
+        <p>
+            But I want you to know the truth from my heart:
+            <strong>I was not cheating on you.</strong>
+            That old profile was from my past, but I understand that finding it
+            made you feel like you were not safe in my love.
+        </p>
+
+        <p>
+            I am sorry for the pain, the doubts, the tears, and the confusion
+            that this caused you. I know saying “sorry” once is easy.
+            But I have been saying it because I genuinely mean it.
+        </p>
+
+        <p>
+            I don't want to force you to forgive me.
+            I don't want to pressure you to forget your feelings.
+            I just want the chance to show you through my actions that
+            my heart is with you.
+        </p>
+
+        <p>
+            I love you, Aleezah.
+            Not just when everything is perfect.
+            I love you even when things are difficult.
+            And I am willing to be patient while your heart heals.
+        </p>
+
+        <p>
+            I want to build something real with you.
+            Something honest.
+            Something strong.
+            Something that lasts.
+        </p>
+
+        <div class="signature">
+            Always yours,<br>
+            The person who loves you ❤️
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PROMISES -->
+<section id="promises">
+
+    <h2 class="section-title">My Promises To You</h2>
+
+    <div class="promises">
+
+        <div class="card">
+            <div class="icon">🤍</div>
+            <h3>Honesty</h3>
+            <p>
+                I promise to be honest with you and never make you feel like
+                you have to question where my heart is.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🫶</div>
+            <h3>Patience</h3>
+            <p>
+                I will give you the time and space you need.
+                I will not rush your heart.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌹</div>
+            <h3>Effort</h3>
+            <p>
+                I will not only say that I love you.
+                I will show you through my actions.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💍</div>
+            <h3>A Future</h3>
+            <p>
+                I don't just want you in my life today.
+                I want to build a future with you.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TIMELINE -->
+<section>
+
+    <h2 class="section-title">What I Want Us To Become</h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <h3>Today</h3>
+            <p>
+                I am asking you to forgive me, but I understand that forgiveness
+                takes time.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>Tomorrow</h3>
+            <p>
+                I want to earn back your trust through patience, honesty,
+                communication, and consistency.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>One Day</h3>
+            <p>
+                I want us to look back at this difficult moment and know
+                that we chose to understand each other.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>Our Future</h3>
+            <p>
+                I want to marry you and build a life where we choose each other
+                every single day.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MARRIAGE -->
+<section id="future">
+
+    <div class="marriage">
+
+        <h2>My Future Is With You 💍</h2>
+
+        <p>
+            Aleezah, I don't want this website to be a way to pressure you.
+            I want it to show you how seriously I feel about us.
+        </p>
+
+        <p>
+            I want to grow with you.
+            I want to laugh with you.
+            I want to face difficult days with you.
+            I want to celebrate beautiful days with you.
+        </p>
+
+        <p>
+            And if you choose me again,
+            I promise I will never take your love for granted.
+        </p>
+
+        <h3 style="font-family: 'Great Vibes'; font-size: 45px; color: #9d174d;">
+            I want to marry you, Aleezah. ❤️
+        </h3>
+
+    </div>
+
+</section>
+
+<!-- FORGIVENESS -->
+<section class="forgiveness">
+
+    <h2 class="section-title">One Last Thing...</h2>
+
+    <p>
+        You do not have to forgive me immediately.
+        You do not have to pretend you are not hurt.
+        Your feelings matter to me.
+    </p>
+
+    <p style="margin-top:20px;">
+        But when your heart is ready,
+        I hope you will give me the chance to prove that
+        I am not the mistake you are afraid I might be.
+    </p>
+
+    <button class="btn" onclick="forgiveMe()">
+        Click When Your Heart Is Ready ❤️
+    </button>
+
+    <div id="response"></div>
+
+</section>
+
+<footer>
+    Made with love, honesty, and hope for <span>Aleezah ❤️</span>
+</footer>
+
+<script>
+
+function forgiveMe() {
+
+    const response = document.getElementById("response");
+
+    response.innerHTML = "I will keep choosing you, patiently. 🌹";
+
+    // Heart explosion
+    for (let i = 0; i < 25; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.innerHTML = "❤️";
+
+        heart.style.position = "fixed";
+        heart.style.left = "50%";
+        heart.style.top = "60%";
+        heart.style.fontSize = Math.random() * 20 + 15 + "px";
+        heart.style.zIndex = "999";
+        heart.style.pointerEvents = "none";
+
+        document.body.appendChild(heart);
+
+        const x = (Math.random() - 0.5) * 500;
+        const y = (Math.random() - 0.5) * 500;
+
+        heart.animate([
+            {
+                transform: "translate(-50%, -50%) scale(0)",
+                opacity: 1
+            },
+            {
+                transform: `translate(${x}px, ${y}px) scale(1.5)`,
+                opacity: 0
+            }
+        ], {
+            duration: 1500,
+            easing: "ease-out"
+        });
+
+        setTimeout(() => {
+            heart.remove();
+        }, 1500);
+    }
+}
+
+</script>
+
+</body>
+</html>
